@@ -42,7 +42,7 @@ let render = (state, packages) => {
 
   let by_char = make_map(packages);
 
-  let content = CharMap.map(List.map(item(state)), by_char) 
+  let content = CharMap.map(List.rev_map(item(state)), by_char) 
     |> CharMap.bindings 
     |> List.map(compile) 
     |> List.flatten;
